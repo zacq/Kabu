@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #152025; color: #F6F1E7; font-family: 'Hanken Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #E8A33D; text-decoration: none; }
+  a:hover { color: #F6F1E7; }
+  img { display: block; }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--gold:#E8A33D; --terra:#C1602A; --dusk:#6B8A99; position:relative; background:#152025; color:#F6F1E7; overflow-x:hidden; font-family:'Hanken Grotesk',system-ui,sans-serif;">
+
+  <nav ref="{{ navRef }}" style="position:fixed; top:0; left:0; right:0; z-index:120; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px 24px; padding:18px clamp(16px,4vw,56px); background:transparent; border-bottom:1px solid transparent; transition:background .4s ease, border-color .4s ease, padding .4s ease; backdrop-filter:blur(0px);">
+    <a href="#top" style="display:flex; align-items:center; gap:12px; color:#F6F1E7;">
+      <span style="position:relative; width:22px; height:22px; border:1px solid var(--gold); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;">
+        <span style="width:7px; height:7px; background:var(--gold); transform:rotate(45deg); display:block;"></span>
+      </span>
+      <span style="font-family:'Darker Grotesque',sans-serif; font-weight:500; font-size:24px; letter-spacing:0.06em; text-transform:uppercase; line-height:1;">Simon Kabu</span>
+    </a>
+    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px clamp(18px,3vw,36px);">
+      <a href="#journey" style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,241,231,0.72);">Journey</a>
+      <a href="#story" style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,241,231,0.72);">Story</a>
+      <a href="#trips" style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,241,231,0.72);">Trips</a>
+      <a href="#contact" style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,241,231,0.72);">Contact</a>
+      <a href="https://wa.me/254748555444" target="_blank" rel="noopener" style="font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(232,163,61,0.5); border-radius:999px; padding:9px 18px;" style-hover="background:var(--gold); color:#152025; border-color:var(--gold);">WhatsApp</a>
+    </div>
+  </nav>
+
+  <section id="top" data-screen-label="Hero" style="position:relative; min-height:min(94svh,980px); overflow:hidden; background:#0f181c;">
+    <img ref="{{ heroImgRef }}" src="img/hero-wide.png" alt="Big Buddha at dusk above the canal, Bangkok" style="position:absolute; inset:-6% 0 -6% 0; width:100%; height:112%; object-fit:cover; object-position:50% 40%; will-change:transform;" />
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(90deg, #152025 0%, rgba(21,32,37,0.78) 22%, rgba(21,32,37,0.22) 52%, rgba(21,32,37,0.05) 72%, rgba(21,32,37,0.3) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(21,32,37,0.4) 0%, rgba(21,32,37,0) 30%, rgba(21,32,37,0.5) 100%);"></div>
+    <div style="position:relative; z-index:2; min-height:min(94svh,980px); display:flex; flex-direction:column; justify-content:center; padding:clamp(96px,12vh,150px) clamp(20px,4vw,60px) clamp(48px,8vh,90px); max-width:880px; overflow:hidden;">
+      <span aria-hidden="true" style="position:absolute; left:-0.06em; top:50%; transform:translateY(-46%); font-family:'Darker Grotesque',sans-serif; font-weight:400; font-size:clamp(200px,25vw,400px); line-height:0.72; letter-spacing:-0.03em; color:rgba(246,241,231,0.05); pointer-events:none; user-select:none; white-space:nowrap;">KABU</span>
+      <div data-reveal="1" style="position:relative; display:flex; align-items:center; gap:10px; margin-bottom:22px;">
+        <span style="width:7px; height:7px; border-radius:50%; background:var(--gold); display:block; flex:0 0 auto;"></span>
+        <span style="font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(246,241,231,0.7);">Founder, Adequate Safaris</span>
+      </div>
+      <h1 data-reveal="1" style="position:relative; margin:0; font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(46px,6.6vw,102px); line-height:0.94; letter-spacing:-0.02em; max-width:14ch; text-wrap:pretty;">Chasing golden hours across the world.</h1>
+      <p data-reveal="1" style="position:relative; margin:26px 0 0; font-size:clamp(15px,1.2vw,18px); line-height:1.6; color:rgba(246,241,231,0.74); max-width:34ch;">30+ countries. One community. <span style="color:var(--gold);">#thekabus</span>.</p>
+      <div data-reveal="1" style="position:relative; display:flex; flex-wrap:wrap; align-items:center; gap:14px 22px; margin-top:38px;">
+        <a href="#trips" style="display:inline-flex; align-items:center; gap:10px; background:var(--gold); color:#152025; font-size:13.5px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; padding:16px 28px; border-radius:999px; box-shadow:0 18px 40px -22px rgba(232,163,61,0.8);" style-hover="background:#F6F1E7; color:#152025;">Join the next trip <span style="font-size:15px;">&#8594;</span></a>
+        <span style="font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(107,138,153,0.95);">Malaysia &amp; Singapore &middot; Sept 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" data-screen-label="Host note" style="padding:clamp(80px,12vh,150px) clamp(20px,4vw,60px);">
+    <div style="max-width:1240px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(32px,5vw,72px); align-items:center;">
+      <div data-reveal="1" style="flex:1 1 380px; min-width:0;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:var(--gold); display:block; flex:0 0 auto;"></span>
+          <span style="font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(246,241,231,0.7);">The story</span>
+        </div>
+        <h2 style="margin:0 0 24px; font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(36px,4.4vw,68px); line-height:1.0; letter-spacing:-0.02em; max-width:20ch;">A host, not a tour operator.</h2>
+        <p style="margin:0; font-size:clamp(15px,1.15vw,18px); line-height:1.75; color:rgba(246,241,231,0.78); max-width:52ch; text-wrap:pretty;">I built Adequate Safaris because the trips I wanted didn't exist yet. Every year I pick a place, work out the details, and take the people who feel like family with me. We move slowly, eat well, and end most days watching the light go. Thirty-odd countries later, the part I keep coming back for isn't the view. It's who is standing next to me when the sun drops.</p>
+        <p style="margin:22px 0 0; font-family:'Darker Grotesque',sans-serif; font-size:26px; letter-spacing:0.02em; color:var(--gold);">Simon Kabu</p>
+        <p style="margin:2px 0 0; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(107,138,153,0.95);">Founder &amp; host, Adequate Safaris</p>
+      </div>
+      <div data-reveal="1" style="flex:0.85 1 320px; min-width:0;">
+        <div style="border-radius:20px; overflow:hidden; box-shadow:0 40px 80px -40px rgba(0,0,0,0.75); background:#0f181c;">
+          <img src="img/simon-kabu-portrait.png" alt="Simon Kabu on a rooftop pool deck" loading="lazy" style="width:100%; aspect-ratio:0.78; object-fit:cover; object-position:50% 30%;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- [PLACEHOLDER] Stat figures below are round, plausible estimates - replace with real numbers before launch. -->
+    <div data-reveal="1" data-placeholder="stats" style="max-width:1240px; margin:clamp(56px,8vh,96px) auto 0; display:flex; flex-wrap:wrap; gap:2px; border-top:1px solid rgba(246,241,231,0.14); padding-top:clamp(28px,4vh,44px);">
+      <div style="flex:1 1 180px; padding:8px 20px 8px 0;">
+        <div style="font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(42px,4.6vw,64px); line-height:1; letter-spacing:-0.02em;">32</div>
+        <div style="margin-top:8px; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(107,138,153,0.95);">Countries visited</div>
+      </div>
+      <div style="flex:1 1 180px; padding:8px 20px;">
+        <div style="font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(42px,4.6vw,64px); line-height:1; letter-spacing:-0.02em;">8</div>
+        <div style="margin-top:8px; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(107,138,153,0.95);">Years hosting trips</div>
+      </div>
+      <div style="flex:1 1 180px; padding:8px 20px;">
+        <div style="font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(42px,4.6vw,64px); line-height:1; letter-spacing:-0.02em;">40</div>
+        <div style="margin-top:8px; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(107,138,153,0.95);">Trips led</div>
+      </div>
+      <div style="flex:1 1 180px; padding:8px 0 8px 20px;">
+        <div style="font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(42px,4.6vw,64px); line-height:1; letter-spacing:-0.02em;">12,000</div>
+        <div style="margin-top:8px; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(107,138,153,0.95);">Community size</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" data-screen-label="The Journey" style="padding:clamp(64px,9vh,110px) clamp(12px,2.5vw,36px) clamp(80px,11vh,140px);">
+    <div data-reveal="1" style="max-width:1240px; margin:0 auto clamp(36px,5vh,60px); padding:0 clamp(8px,1.5vw,24px); display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 40px;">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:var(--gold); display:block; flex:0 0 auto;"></span>
+          <span style="font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(246,241,231,0.7);">The journey</span>
+        </div>
+        <h2 style="margin:0; font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(36px,4.4vw,68px); line-height:1.0; letter-spacing:-0.02em;">Where the light took us.</h2>
+      </div>
+      <p style="margin:0; font-size:14px; line-height:1.7; color:rgba(246,241,231,0.62); max-width:34ch;">Markets, temples, long boat rides and slow evenings. A year of golden hours, in no particular order.</p>
+    </div>
+
+    <div ref="{{ galleryRef }}" style="max-width:1400px; margin:0 auto; columns:270px; column-gap:clamp(12px,1.4vw,20px);">
+      <div style="break-inside:avoid; margin-bottom:clamp(12px,1.4vw,20px); position:relative; border-radius:20px; overflow:hidden; background:#0f181c;">
+        <img src="img/floating-market.jpeg" alt="Floating market at first light" loading="lazy" style="width:100%; height:auto;" />
+        <a href="#journey" aria-label="Damnoen Saduak, floating market" style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .45s ease; background:linear-gradient(180deg, rgba(21,32,37,0) 45%, rgba(21,32,37,0.72) 100%);" style-hover="opacity:1;">
+          <span style="background:rgba(21,32,37,0.55); backdrop-filter:blur(10px); border:1px solid rgba(246,241,231,0.2); border-radius:999px; padding:8px 14px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F6F1E7;">Damnoen Saduak &middot; Floating market</span>
+        </a>
+      </div>
+      <div style="break-inside:avoid; margin-bottom:clamp(12px,1.4vw,20px); position:relative; border-radius:20px; overflow:hidden; background:#0f181c;">
+        <img src="img/golden-hour-buddha.jpeg" alt="Golden Buddha at golden hour" loading="lazy" style="width:100%; height:auto;" />
+        <a href="#journey" aria-label="Wat Paknam, golden hour" style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .45s ease; background:linear-gradient(180deg, rgba(21,32,37,0) 45%, rgba(21,32,37,0.72) 100%);" style-hover="opacity:1;">
+          <span style="background:rgba(21,32,37,0.55); backdrop-filter:blur(10px); border:1px solid rgba(246,241,231,0.2); border-radius:999px; padding:8px 14px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F6F1E7;">Bangkok &middot; Golden hour</span>
+        </a>
+      </div>
+      <div style="break-inside:avoid; margin-bottom:clamp(12px,1.4vw,20px); position:relative; border-radius:20px; overflow:hidden; background:#0f181c;">
+        <img src="img/railay-beach.jpeg" alt="Limestone cliffs over a beach" loading="lazy" style="width:100%; height:auto;" />
+        <a href="#journey" aria-label="Railay, Krabi" style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .45s ease; background:linear-gradient(180deg, rgba(21,32,37,0) 45%, rgba(21,32,37,0.72) 100%);" style-hover="opacity:1;">
+          <span style="background:rgba(21,32,37,0.55); backdrop-filter:blur(10px); border:1px solid rgba(246,241,231,0.2); border-radius:999px; padding:8px 14px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F6F1E7;">Railay &middot; Krabi</span>
+        </a>
+      </div>
+      <div style="break-inside:avoid; margin-bottom:clamp(12px,1.4vw,20px); position:relative; border-radius:20px; overflow:hidden; background:#0f181c;">
+        <img src="img/railway-market.jpeg" alt="Market stalls beside a railway line" loading="lazy" style="width:100%; height:auto;" />
+        <a href="#journey" aria-label="Maeklong, railway market" style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .45s ease; background:linear-gradient(180deg, rgba(21,32,37,0) 45%, rgba(21,32,37,0.72) 100%);" style-hover="opacity:1;">
+          <span style="background:rgba(21,32,37,0.55); backdrop-filter:blur(10px); border:1px solid rgba(246,241,231,0.2); border-radius:999px; padding:8px 14px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F6F1E7;">Maeklong &middot; Railway market</span>
+        </a>
+      </div>
+      <div style="break-inside:avoid; margin-bottom:clamp(12px,1.4vw,20px); position:relative; border-radius:20px; overflow:hidden; background:#0f181c;">
+        <img src="img/phang-nga-kayaking.jpeg" alt="Kayaking between limestone karsts" loading="lazy" style="width:100%; height:auto;" />
+        <a href="#journey" aria-label="Phang Nga Bay" style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .45s ease; background:linear-gradient(180deg, rgba(21,32,37,0) 45%, rgba(21,32,37,0.72) 100%);" style-hover="opacity:1;">
+          <span style="background:rgba(21,32,37,0.55); backdrop-filter:blur(10px); border:1px solid rgba(246,241,231,0.2); border-radius:999px; padding:8px 14px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F6F1E7;">Phang Nga Bay</span>
+        </a>
+      </div>
+      <div style="break-inside:avoid; margin-bottom:clamp(12px,1.4vw,20px); position:relative; border-radius:20px; overflow:hidden; background:#0f181c;">
+        <img src="img/temple-monks.jpeg" alt="Monks in temple grounds" loading="lazy" style="width:100%; height:auto;" />
+        <a href="#journey" aria-label="Temple grounds" style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .45s ease; background:linear-gradient(180deg, rgba(21,32,37,0) 45%, rgba(21,32,37,0.72) 100%);" style-hover="opacity:1;">
+          <span style="background:rgba(21,32,37,0.55); backdrop-filter:blur(10px); border:1px solid rgba(246,241,231,0.2); border-radius:999px; padding:8px 14px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F6F1E7;">Temple grounds</span>
+        </a>
+      </div>
+      <div style="break-inside:avoid; margin-bottom:clamp(12px,1.4vw,20px); position:relative; border-radius:20px; overflow:hidden; background:#0f181c;">
+        <img src="img/beachfront-cafe.jpeg" alt="Beachfront cafe in the afternoon" loading="lazy" style="width:100%; height:auto;" />
+        <a href="#journey" aria-label="Andaman coast" style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .45s ease; background:linear-gradient(180deg, rgba(21,32,37,0) 45%, rgba(21,32,37,0.72) 100%);" style-hover="opacity:1;">
+          <span style="background:rgba(21,32,37,0.55); backdrop-filter:blur(10px); border:1px solid rgba(246,241,231,0.2); border-radius:999px; padding:8px 14px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F6F1E7;">Andaman coast</span>
+        </a>
+      </div>
+      <div style="break-inside:avoid; margin-bottom:clamp(12px,1.4vw,20px); position:relative; border-radius:20px; overflow:hidden; background:#0f181c;">
+        <img src="img/island-sunset-resort.jpeg" alt="Island resort at sunset" loading="lazy" style="width:100%; height:auto;" />
+        <a href="#journey" aria-label="Island sunset" style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .45s ease; background:linear-gradient(180deg, rgba(21,32,37,0) 45%, rgba(21,32,37,0.72) 100%);" style-hover="opacity:1;">
+          <span style="background:rgba(21,32,37,0.55); backdrop-filter:blur(10px); border:1px solid rgba(246,241,231,0.2); border-radius:999px; padding:8px 14px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F6F1E7;">Island sunset</span>
+        </a>
+      </div>
+      <div style="break-inside:avoid; margin-bottom:clamp(12px,1.4vw,20px); position:relative; border-radius:20px; overflow:hidden; background:#0f181c;">
+        <img src="img/overwater-bungalows.jpeg" alt="Overwater bungalows on a lagoon" loading="lazy" style="width:100%; height:auto;" />
+        <a href="#journey" aria-label="Overwater bungalows" style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .45s ease; background:linear-gradient(180deg, rgba(21,32,37,0) 45%, rgba(21,32,37,0.72) 100%);" style-hover="opacity:1;">
+          <span style="background:rgba(21,32,37,0.55); backdrop-filter:blur(10px); border:1px solid rgba(246,241,231,0.2); border-radius:999px; padding:8px 14px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F6F1E7;">Overwater bungalows</span>
+        </a>
+      </div>
+      <div style="break-inside:avoid; margin-bottom:clamp(12px,1.4vw,20px); position:relative; border-radius:20px; overflow:hidden; background:#0f181c;">
+        <img src="img/rice-terrace-volcano.jpeg" alt="Rice terraces below a volcano" loading="lazy" style="width:100%; height:auto;" />
+        <a href="#journey" aria-label="Rice terraces, volcano view" style="position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .45s ease; background:linear-gradient(180deg, rgba(21,32,37,0) 45%, rgba(21,32,37,0.72) 100%);" style-hover="opacity:1;">
+          <span style="background:rgba(21,32,37,0.55); backdrop-filter:blur(10px); border:1px solid rgba(246,241,231,0.2); border-radius:999px; padding:8px 14px; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#F6F1E7;">Rice terraces &middot; Volcano view</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Man behind the miles" style="padding:clamp(64px,9vh,110px) clamp(20px,4vw,60px) clamp(90px,12vh,150px); background:#1A272D;">
+    <div data-reveal="1" style="max-width:1240px; margin:0 auto clamp(40px,6vh,72px);">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
+        <span style="width:7px; height:7px; border-radius:50%; background:var(--gold); display:block; flex:0 0 auto;"></span>
+        <span style="font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(246,241,231,0.7);">Man behind the miles</span>
+      </div>
+      <h2 style="margin:0; font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(36px,4.4vw,68px); line-height:1.0; letter-spacing:-0.02em; max-width:24ch;">Global success, Kenyan roots.</h2>
+    </div>
+    <div style="max-width:1240px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(24px,4vw,56px); align-items:flex-start;">
+      <figure data-reveal="1" style="flex:1 1 320px; min-width:0; margin:0;">
+        <div style="border-radius:20px; overflow:hidden; background:#0f181c; box-shadow:0 40px 80px -46px rgba(0,0,0,0.8);">
+          <img src="img/simon-kabu-desert.png" alt="Simon Kabu in the desert at dusk" loading="lazy" style="width:100%; aspect-ratio:0.86; object-fit:cover; object-position:50% 40%;" />
+        </div>
+        <figcaption style="padding:22px 4px 0;">
+          <div style="font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;">The horizon</div>
+          <p style="margin:0; font-size:15.5px; line-height:1.7; color:rgba(246,241,231,0.75); max-width:42ch;">Dubai, last light. Most of the year is spent scouting the next place worth flying a hundred friends to.</p>
+        </figcaption>
+      </figure>
+      <figure data-reveal="1" style="flex:1 1 320px; min-width:0; margin:0; transform:translateY(0px);">
+        <div style="border-radius:20px; overflow:hidden; background:#0f181c; box-shadow:0 40px 80px -46px rgba(0,0,0,0.8);">
+          <img src="img/simon-kabu-heritage.png" alt="Simon Kabu in traditional Maasai dress" loading="lazy" style="width:100%; aspect-ratio:0.86; object-fit:cover; object-position:50% 35%;" />
+        </div>
+        <figcaption style="padding:22px 4px 0;">
+          <div style="font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase; color:var(--terra); margin-bottom:10px;">The roots</div>
+          <p style="margin:0; font-size:15.5px; line-height:1.7; color:rgba(246,241,231,0.75); max-width:42ch;">Shuka on, wherever the trip lands. Home travels with you, and it is usually the first thing people ask about.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="trips" data-screen-label="Upcoming trip" style="background:#F6F1E7; color:#152025; padding:clamp(72px,10vh,130px) clamp(20px,4vw,60px);">
+    <div data-reveal="1" style="max-width:1240px; margin:0 auto clamp(40px,6vh,64px); display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 40px;">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:var(--gold); display:block; flex:0 0 auto;"></span>
+          <span style="font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(21,32,37,0.7);">Upcoming trip</span>
+        </div>
+        <h2 style="margin:0; font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(40px,5.6vw,88px); line-height:0.96; letter-spacing:-0.025em;">Malaysia &amp; Singapore</h2>
+      </div>
+      <span style="display:inline-flex; align-items:center; gap:9px; background:rgba(193,96,42,0.1); border:1px solid rgba(193,96,42,0.35); color:var(--terra); border-radius:999px; padding:10px 18px; font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase;">
+        <span style="width:7px; height:7px; border-radius:50%; background:var(--terra); display:block;"></span>Few slots remaining</span>
+    </div>
+
+    <div style="max-width:1240px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(24px,3vw,40px); align-items:flex-start;">
+      <div data-reveal="1" style="flex:1.15 1 420px; min-width:0; background:#FFFDF8; border:1px solid rgba(21,32,37,0.1); border-radius:20px; padding:clamp(24px,3vw,40px); box-shadow:0 30px 60px -40px rgba(21,32,37,0.35);">
+        <dl style="margin:0; display:flex; flex-direction:column; gap:0;">
+          <div style="display:flex; flex-wrap:wrap; gap:6px 24px; padding:0 0 18px; border-bottom:1px solid rgba(21,32,37,0.1);">
+            <dt style="flex:0 0 130px; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(21,32,37,0.7); padding-top:4px;">Dates</dt>
+            <dd style="margin:0; flex:1 1 220px; font-size:17px; line-height:1.5;">19&ndash;25 September 2026</dd>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px 24px; padding:18px 0; border-bottom:1px solid rgba(21,32,37,0.1);">
+            <dt style="flex:0 0 130px; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(21,32,37,0.7); padding-top:4px;">Duration</dt>
+            <dd style="margin:0; flex:1 1 220px; font-size:17px; line-height:1.5;">7 Days / 6 Nights</dd>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px 24px; padding:18px 0 0;">
+            <dt style="flex:0 0 130px; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(21,32,37,0.7); padding-top:4px;">Route</dt>
+            <dd style="margin:0; flex:1 1 220px; font-size:17px; line-height:1.6;">Kuala Lumpur <span style="color:rgba(21,32,37,0.7);">(Wyndham Suites KLCC, 4 nights)</span> <span style="color:var(--terra);">&#8594;</span> Singapore <span style="color:rgba(21,32,37,0.7);">(Royal Plaza on Scotts, 2 nights)</span></dd>
+          </div>
+        </dl>
+
+        <div style="margin-top:clamp(28px,4vh,40px); padding-top:clamp(24px,3vh,32px); border-top:1px solid rgba(21,32,37,0.1);">
+          <div style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(21,32,37,0.7); margin-bottom:18px;">What&rsquo;s included</div>
+          <ul style="margin:0; padding:0; list-style:none; columns:230px; column-gap:32px;">
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>Return international flights (Emirates)</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>Daily breakfast at both hotels</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>All airport &amp; city transfers</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>Singapore city tour</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>Universal Studios Singapore ticket</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>Kuala Lumpur city tour + KL Tower Combo ticket</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>Sunway Lagoon Theme Park ticket</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>Genting Highlands tour with cable car</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>English-speaking guide</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>Private A/C coach</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>Malaysia tourism tax</li>
+            <li style="break-inside:avoid; display:flex; gap:10px; margin-bottom:12px; font-size:15px; line-height:1.5;"><span style="color:var(--gold); flex:0 0 auto;">&#10003;</span>Daily bottled water</li>
+          </ul>
+          <p style="margin:18px 0 0; font-size:13px; line-height:1.6; color:rgba(21,32,37,0.7);">Not included: personal expenses, lunch &amp; dinner, optional tours.</p>
+        </div>
+      </div>
+
+      <div data-reveal="1" style="flex:1 1 360px; min-width:0; background:#152025; color:#F6F1E7; border-radius:24px; padding:clamp(24px,3vw,34px); box-shadow:0 40px 80px -40px rgba(21,32,37,0.55); display:flex; flex-direction:column; gap:clamp(18px,2.4vw,24px);">
+        <div>
+          <div style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,241,231,0.6); margin-bottom:6px;">Reserve your seat</div>
+          <div style="font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(24px,2.4vw,28px); line-height:1.1;">Before the dates close.</div>
+        </div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:rgba(246,241,231,0.06); border:1px solid rgba(246,241,231,0.14); border-radius:14px; padding:14px 16px;">
+          <div>
+            <div style="font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(246,241,231,0.55);">Trip dates</div>
+            <div style="margin-top:4px; font-size:15px;">19&ndash;25 Sep 2026</div>
+          </div>
+          <span style="flex:0 0 auto; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(232,163,61,0.4); border-radius:999px; padding:6px 12px; white-space:nowrap;">Fixed departure</span>
+        </div>
+
+        <div>
+          <div style="font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(246,241,231,0.55); margin-bottom:10px;">September 2026</div>
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:2px; margin-bottom:2px;">
+            <sc-for list="{{ calendarWeekdays }}" as="wd">
+              <span style="display:flex; align-items:center; justify-content:center; height:18px; font-size:10px; color:rgba(246,241,231,0.4);">{{ wd }}</span>
+            </sc-for>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:2px;">
+            <sc-for list="{{ calendarCells }}" as="cell">
+              <span style="{{ cell.style }}">{{ cell.label }}</span>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:rgba(246,241,231,0.06); border:1px solid rgba(246,241,231,0.14); border-radius:14px; padding:14px 16px;">
+          <div>
+            <div style="font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(246,241,231,0.55);">Guests</div>
+            <div style="margin-top:4px; font-size:15px;">{{ guests }} traveller{{ guestsSuffix }}</div>
+          </div>
+          <div style="flex:0 0 auto; display:flex; align-items:center; gap:12px;">
+            <button type="button" onclick="{{ decGuests }}" aria-label="Decrease guests" style="width:28px; height:28px; border-radius:50%; border:1px solid rgba(246,241,231,0.3); background:transparent; color:#F6F1E7; font-size:16px; line-height:1; cursor:pointer; font-family:inherit;">&#8722;</button>
+            <span style="min-width:12px; text-align:center; font-size:15px;">{{ guests }}</span>
+            <button type="button" onclick="{{ incGuests }}" aria-label="Increase guests" style="width:28px; height:28px; border-radius:50%; border:1px solid rgba(246,241,231,0.3); background:transparent; color:#F6F1E7; font-size:16px; line-height:1; cursor:pointer; font-family:inherit;">+</button>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(246,241,231,0.55); margin-bottom:10px;">Room type</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <button type="button" onclick="{{ selectSharing }}" style="{{ sharingBtnStyle }}">
+              <span style="display:block; font-family:'Darker Grotesque',sans-serif; font-size:24px; font-weight:300; line-height:1;">2,193</span>
+              <span style="display:block; margin-top:6px; font-size:10px; letter-spacing:0.1em; text-transform:uppercase;">Sharing</span>
+            </button>
+            <button type="button" onclick="{{ selectSingle }}" style="{{ singleBtnStyle }}">
+              <span style="display:block; font-family:'Darker Grotesque',sans-serif; font-size:24px; font-weight:300; line-height:1;">2,793</span>
+              <span style="display:block; margin-top:6px; font-size:10px; letter-spacing:0.1em; text-transform:uppercase;">Single room</span>
+            </button>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding-top:16px; border-top:1px solid rgba(246,241,231,0.14);">
+          <span style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(246,241,231,0.6);">Estimated total</span>
+          <span style="font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(28px,3vw,34px); line-height:1;">USD {{ totalLabel }}</span>
+        </div>
+
+        <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:10px; background:var(--gold); color:#152025; border-radius:999px; padding:19px 26px; font-size:14px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; box-shadow:0 24px 50px -26px rgba(232,163,61,0.9);" style-hover="background:#F6F1E7;">Reserve your spot <span style="font-size:16px;">&#8594;</span></a>
+        <p style="margin:0; font-size:12.5px; line-height:1.8; color:rgba(246,241,231,0.6); text-align:center;">Or call <a href="tel:+254711711498" style="color:#F6F1E7; border-bottom:1px solid rgba(246,241,231,0.3);">+254 711 711 498</a> &middot; email <a href="mailto:deals@adequatesafaris.com" style="color:#F6F1E7; border-bottom:1px solid rgba(246,241,231,0.3);">deals@adequatesafaris.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Community" style="padding:clamp(72px,10vh,130px) clamp(20px,4vw,60px);">
+    <div data-reveal="1" style="max-width:1240px; margin:0 auto clamp(40px,6vh,64px); text-align:center;">
+      <div style="display:inline-flex; align-items:center; gap:10px; margin-bottom:18px;">
+        <span style="width:7px; height:7px; border-radius:50%; background:var(--gold); display:block; flex:0 0 auto;"></span>
+        <span style="font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(246,241,231,0.7);">The community</span>
+      </div>
+      <h2 style="margin:0; font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(44px,6.5vw,104px); line-height:0.95; letter-spacing:-0.03em;">#thekabus</h2>
+      <p style="margin:20px auto 0; font-size:15.5px; line-height:1.7; color:rgba(246,241,231,0.66); max-width:46ch;">The people who keep showing up, year after year, wherever the trip lands.</p>
+    </div>
+    <!-- [PLACEHOLDER COPY] The three quotes below are written placeholders, not real guest testimonials. Replace with verified quotes (and real names) before this page goes public. -->
+    <div data-reveal="1" data-placeholder="testimonials" style="max-width:1240px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(16px,2vw,24px);">
+      <blockquote style="margin:0; background:rgba(246,241,231,0.05); border:1px solid rgba(246,241,231,0.12); border-radius:20px; padding:clamp(24px,3vw,34px); backdrop-filter:blur(8px);">
+        <p style="margin:0 0 22px; font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:25px; line-height:1.3; letter-spacing:-0.01em; color:#F6F1E7;">I booked the first trip to see a new country. I keep booking them for the people.</p>
+        <footer style="font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold);">Guest name &middot; Four trips</footer>
+      </blockquote>
+      <blockquote style="margin:0; background:rgba(246,241,231,0.05); border:1px solid rgba(246,241,231,0.12); border-radius:20px; padding:clamp(24px,3vw,34px); backdrop-filter:blur(8px);">
+        <p style="margin:0 0 22px; font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:25px; line-height:1.3; letter-spacing:-0.01em; color:#F6F1E7;">Everything was handled before we landed. All we had to do was show up and enjoy it.</p>
+        <footer style="font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold);">Guest name &middot; Dubai 2025</footer>
+      </blockquote>
+      <blockquote style="margin:0; background:rgba(246,241,231,0.05); border:1px solid rgba(246,241,231,0.12); border-radius:20px; padding:clamp(24px,3vw,34px); backdrop-filter:blur(8px);">
+        <p style="margin:0 0 22px; font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:25px; line-height:1.3; letter-spacing:-0.01em; color:#F6F1E7;">Travelling with Simon feels like travelling with family who happens to know everyone.</p>
+        <footer style="font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold);">Guest name &middot; Thailand 2024</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="padding:clamp(72px,10vh,130px) clamp(20px,4vw,60px); background:#1A272D;">
+    <div data-reveal="1" style="max-width:1240px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(32px,5vw,72px); align-items:flex-start; justify-content:space-between;">
+      <div style="flex:1 1 360px; min-width:0;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:var(--gold); display:block; flex:0 0 auto;"></span>
+          <span style="font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(246,241,231,0.7);">Contact</span>
+        </div>
+        <h2 style="margin:0 0 20px; font-family:'Darker Grotesque',sans-serif; font-weight:300; font-size:clamp(38px,5vw,76px); line-height:0.98; letter-spacing:-0.02em; max-width:18ch;">Plan your trip with Simon</h2>
+        <p style="margin:0; font-size:15.5px; line-height:1.7; color:rgba(246,241,231,0.7); max-width:44ch;">Based in Nairobi, Kenya, and on the road most of the year. The Adequate Safaris team answers first, and Simon plans every group trip himself.</p>
+        <a href="https://wa.me/254748555444" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; margin-top:32px; background:var(--gold); color:#152025; border-radius:999px; padding:17px 28px; font-size:13.5px; font-weight:500; letter-spacing:0.09em; text-transform:uppercase;" style-hover="background:#F6F1E7;">Chat on WhatsApp <span style="font-size:15px;">&#8594;</span></a>
+      </div>
+      <div style="flex:0.9 1 300px; min-width:0; display:flex; flex-direction:column; gap:2px;">
+        <div style="display:flex; flex-wrap:wrap; gap:4px 20px; padding:18px 0; border-top:1px solid rgba(246,241,231,0.14);">
+          <span style="flex:0 0 110px; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#8FADBA; padding-top:4px;">Email</span>
+          <a href="mailto:deals@adequatesafaris.com" style="flex:1 1 180px; font-size:17px; color:#F6F1E7;">deals@adequatesafaris.com</a>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:4px 20px; padding:18px 0; border-top:1px solid rgba(246,241,231,0.14);">
+          <span style="flex:0 0 110px; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#8FADBA; padding-top:4px;">WhatsApp</span>
+          <a href="https://wa.me/254748555444" target="_blank" rel="noopener" style="flex:1 1 180px; font-size:17px; color:#F6F1E7;">+254 748 555 444</a>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:4px 20px; padding:18px 0; border-top:1px solid rgba(246,241,231,0.14); border-bottom:1px solid rgba(246,241,231,0.14);">
+          <span style="flex:0 0 110px; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#8FADBA; padding-top:4px;">Phone</span>
+          <span style="flex:1 1 180px; font-size:17px; line-height:1.9;"><a href="tel:+254711711498" style="color:#F6F1E7;">+254 711 711 498</a><br /><a href="tel:+254700888555" style="color:#F6F1E7;">+254 700 888 555</a><br /><a href="tel:+254719888000" style="color:#F6F1E7;">+254 719 888 000</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer data-screen-label="Closing" style="position:relative; min-height:min(72svh,720px); display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; background:#0f181c;">
+    <img ref="{{ closingImgRef }}" src="img/hero-wide.png" alt="Big Buddha at dusk above the canal, Bangkok" loading="lazy" style="position:absolute; inset:-8% 0 -8% 0; width:100%; height:116%; object-fit:cover; object-position:50% 34%; will-change:transform;" />
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(21,32,37,0.6) 0%, rgba(21,32,37,0.25) 30%, rgba(21,32,37,0.92) 78%, #152025 100%);"></div>
+    <div style="position:relative; padding:clamp(48px,8vh,90px) clamp(20px,4vw,60px) clamp(28px,4vh,44px);">
+      <span aria-hidden="true" style="display:block; font-family:'Darker Grotesque',sans-serif; font-weight:400; font-size:clamp(96px,22vw,320px); line-height:0.78; letter-spacing:-0.03em; color:rgba(246,241,231,0.09); user-select:none;">KABU</span>
+      <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px 32px; margin-top:clamp(24px,4vh,44px); padding-top:24px; border-top:1px solid rgba(246,241,231,0.14);">
+        <span style="font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(246,241,231,0.6);">Simon Kabu &middot; Adequate Safaris &middot; Nairobi, Kenya</span>
+        <div style="display:flex; flex-wrap:wrap; gap:10px 26px;">
+          <a href="#journey" style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,241,231,0.6);">Journey</a>
+          <a href="#story" style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,241,231,0.6);">Story</a>
+          <a href="#trips" style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,241,231,0.6);">Trips</a>
+          <a href="#contact" style="font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(246,241,231,0.6);">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accentColor&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#E8A33D&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Theme&quot;, &quot;options&quot;: [&quot;#E8A33D&quot;, &quot;#C1602A&quot;, &quot;#6B8A99&quot;, &quot;#D9A15B&quot;]},
+  &quot;enableMotion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Motion&quot;},
+  &quot;galleryTileWidth&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 270, &quot;min&quot;: 200, &quot;max&quot;: 420, &quot;step&quot;: 10, &quot;unit&quot;: &quot;px&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Gallery&quot;}
+}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.rootRef = React.createRef();
+    this.navRef = React.createRef();
+    this.heroImgRef = React.createRef();
+    this.closingImgRef = React.createRef();
+    this.galleryRef = React.createRef();
+    this.state = { guests: 2, roomType: 'sharing' };
+  }
+
+  componentDidMount() {
+    this.applyTheme();
+    this.setupReveals();
+    this.onScroll = () => {
+      const nav = this.navRef.current;
+      const y = window.scrollY || 0;
+      if (nav) {
+        const solid = y > 60;
+        nav.style.background = solid ? 'rgba(21,32,37,0.92)' : 'transparent';
+        nav.style.borderBottomColor = solid ? 'rgba(246,241,231,0.12)' : 'transparent';
+        nav.style.backdropFilter = solid ? 'blur(14px)' : 'blur(0px)';
+        nav.style.paddingTop = solid ? '13px' : '18px';
+        nav.style.paddingBottom = solid ? '13px' : '18px';
+      }
+      if (this.props.enableMotion !== false) this.parallax();
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+
+  componentDidUpdate() {
+    this.applyTheme();
+    this.setupReveals();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    if (this.io) this.io.disconnect();
+  }
+
+  applyTheme() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    root.style.setProperty('--gold', this.props.accentColor || '#E8A33D');
+    const w = this.props.galleryTileWidth;
+    const grid = this.galleryRef.current;
+    if (w && grid) grid.style.columns = w + 'px';
+  }
+
+  parallax() {
+    [this.heroImgRef, this.closingImgRef].forEach((ref) => {
+      const el = ref.current;
+      if (!el) return;
+      const box = el.parentElement.getBoundingClientRect();
+      const vh = window.innerHeight || 800;
+      if (box.bottom < -200 || box.top > vh + 200) return;
+      const progress = (box.top + box.height / 2 - vh / 2) / vh;
+      el.style.transform = 'translate3d(0,' + (-progress * 42).toFixed(2) + 'px,0) scale(1.02)';
+    });
+  }
+
+  setupReveals() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    const motion = this.props.enableMotion !== false;
+    const nodes = Array.from(root.querySelectorAll('[data-reveal]'));
+    if (!motion) {
+      nodes.forEach((el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.filter = 'none';
+      });
+      return;
+    }
+    if (this.io) this.io.disconnect();
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        this.show(e.target);
+        this.io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    nodes.forEach((el, i) => {
+      if (el.dataset.shown === '1') { this.show(el); return; }
+      el.style.transition = 'opacity .9s cubic-bezier(.22,.61,.36,1) ' + Math.min(i % 4, 3) * 0.07 + 's, transform 1.1s cubic-bezier(.22,.61,.36,1) ' + Math.min(i % 4, 3) * 0.07 + 's';
+      el.style.opacity = '0';
+      el.style.transform = 'perspective(1200px) translate3d(0,34px,-60px) rotateX(3deg)';
+      this.io.observe(el);
+    });
+  }
+
+  show(el) {
+    el.dataset.shown = '1';
+    el.style.opacity = '1';
+    el.style.transform = 'perspective(1200px) translate3d(0,0,0) rotateX(0deg)';
+  }
+
+  fmt(n) {
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  buildCalendar() {
+    const totalDays = 30; // September 2026
+    const startWeekday = 2; // Sept 1, 2026 is a Tuesday (Sun=0)
+    const hiStart = 19, hiEnd = 25; // the trip's fixed dates
+    const dayStyle = (hi) => 'display:flex;align-items:center;justify-content:center;width:26px;height:26px;margin:0 auto;border-radius:50%;font-size:11.5px;' +
+      (hi ? 'background:var(--gold);color:#152025;font-weight:600;' : 'color:rgba(246,241,231,0.55);');
+    const emptyStyle = 'visibility:hidden;width:26px;height:26px;margin:0 auto;';
+    const cells = [];
+    for (let i = 0; i < startWeekday; i++) cells.push({ key: 'lead' + i, label: '', style: emptyStyle });
+    for (let d = 1; d <= totalDays; d++) {
+      cells.push({ key: 'd' + d, label: String(d), style: dayStyle(d >= hiStart && d <= hiEnd) });
+    }
+    while (cells.length % 7 !== 0) cells.push({ key: 'trail' + cells.length, label: '', style: emptyStyle });
+    return cells;
+  }
+
+  renderVals() {
+    const guests = this.state.guests || 2;
+    const roomType = this.state.roomType || 'sharing';
+    const rate = roomType === 'single' ? 2793 : 2193;
+    const activeBtn = 'display:block; width:100%; text-align:left; background:var(--gold); color:#152025; border:1px solid var(--gold); border-radius:16px; padding:14px; cursor:pointer; font-family:inherit;';
+    const idleBtn = 'display:block; width:100%; text-align:left; background:rgba(246,241,231,0.06); color:#F6F1E7; border:1px solid rgba(246,241,231,0.16); border-radius:16px; padding:14px; cursor:pointer; font-family:inherit;';
+    return {
+      rootRef: this.rootRef,
+      navRef: this.navRef,
+      heroImgRef: this.heroImgRef,
+      closingImgRef: this.closingImgRef,
+      galleryRef: this.galleryRef,
+      guests,
+      guestsSuffix: guests === 1 ? '' : 's',
+      totalLabel: this.fmt(guests * rate),
+      calendarWeekdays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+      calendarCells: this.buildCalendar(),
+      sharingBtnStyle: roomType === 'sharing' ? activeBtn : idleBtn,
+      singleBtnStyle: roomType === 'single' ? activeBtn : idleBtn,
+      incGuests: () => this.setState((s) => ({ guests: Math.min(12, (s.guests || 2) + 1) })),
+      decGuests: () => this.setState((s) => ({ guests: Math.max(1, (s.guests || 2) - 1) })),
+      selectSharing: () => this.setState({ roomType: 'sharing' }),
+      selectSingle: () => this.setState({ roomType: 'single' }),
+      waHref: 'https://wa.me/254748555444?text=' + encodeURIComponent(
+        "Hi! I'd like to reserve " + guests + (guests === 1 ? ' seat' : ' seats') +
+        ' (' + (roomType === 'single' ? 'single room' : 'sharing') + ') on the Malaysia & Singapore trip, 19–25 Sept 2026.'
+      ),
+    };
+  }
+}
+</script>
+</body>
+</html>
